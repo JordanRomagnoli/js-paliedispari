@@ -8,16 +8,20 @@ validationForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     playerNumber = parseInt(document.getElementById('user-input').value);
-    computerNumber = document.getElementById('cmptr-number').innerHTML = randomNumber(1,5)
+    computerNumber = document.getElementById('cmptr-number').innerHTML = randomNumber(1,5);
+
+    document.getElementById('summ-number').innerHTML = summ(playerNumber, computerNumber);
+
 
 
     if(((summ(playerNumber, computerNumber) % 2 == 0) && (userStatus.value == 'even')) || ((summ(playerNumber, computerNumber) % 2 == 1) && (userStatus.value == 'odd'))){
-
+        document.getElementById('result').innerHTML = 'Hai vinto !';
         console.log('player win');
 
     }else{
-        console.log('player lose');
 
+        document.getElementById('result').innerHTML = 'Ha vinto il computer';
+        console.log('player lose');
     }
     
 });
