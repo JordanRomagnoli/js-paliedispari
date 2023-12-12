@@ -12,7 +12,24 @@
     </head>
     <body class="debug">
 
-        <main>
+        <main> 
+            <div class="container-lg">
+                <form id="validation-form" class="row">
+                    <select id="user-status" class="form-select" aria-label="Default select example">
+                        <option value="even">Pari</option>
+                        <option value="odd">Dispari</option>
+                    </select>
+        
+                        <label for="user-input">Inserisci un numero da 1 a 5</label>
+                        <input type="number" class="form-control" placeholder="inserisci qui un numero" id="user-input" min="1" max="5">
+                        <button type="submit">Invia</button>
+                        
+                        <div class="p-4">
+                            <h5>Il computer ha scelto il numero</h5>
+                            <span id="cmptr-number"></span>
+                        </div>
+                </form>
+            </div>
             
             
 
