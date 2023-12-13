@@ -1,28 +1,37 @@
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let userInput = document.getElementById('userInput').value;
+
+    let reversedWord = reverser(userInput);
+    console.log(reversedWord);
+
+    if (userInput == reversedWord){
+        document.getElementById('result').innerHTML = 'La tua parola è palindroma';
+    }else{
+        document.getElementById('result').innerHTML = 'La tua parola non è palindroma';
+    }
+
+})
+
+
+
+//---- FUNCTION --------------------------------------------------
 
 function reverser (word){
+
+    let reverseWord = '';
     
-    let reverseWord;
+    for(i = word.length - 1; i >= 0; i--){
 
-    reverseWord = word.split('').reverse().join('');
+        console.log(word[i]);
 
-    if (word == reverseWord){
-        console.log('la parola è palindroma');
-    }else{
-        console.log('la parola non è palindroma');
+        reverseWord += word[i];
     }
-                                                                                                                                                                                                                                        
+
+    return reverseWord;
+
 }
 
-let userInput = prompt('Inserisci una parola').toLowerCase();
 
-reverser(userInput);
-
-/* const userInput = document.getElementById('wordInput');
-let userInputValue = userInput.value;
-const buttonInput = document.getElementById('wordButton');
-
-buttonInput.addEventListener('click', function(){
-
-    console.log(userInputValue, 'userInputValue' ,typeof userInputValue)
-
-}) */
+                                                                                                                                                                                                                                        
