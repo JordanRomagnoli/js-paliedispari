@@ -11,11 +11,13 @@ validationForm.addEventListener("submit", (e) => {
     computerNumber = document.getElementById('cmptr-number').innerHTML = randomNumber(1, 5);
     console.log(randomNumber(1, 5))
 
-    document.getElementById('summ-number').innerHTML = summ(playerNumber, computerNumber);
+
+    let sumNumber = summ(playerNumber, computerNumber);
+    document.getElementById('summ-number').innerHTML = sumNumber;
 
 
 
-    if((evenOdd(summ(playerNumber, computerNumber)) && (userStatus.value == 'even')) || (evenOdd(summ(playerNumber, computerNumber)) && (userStatus.value == 'odd'))){
+    if(((evenOdd(sumNumber) == true) && (userStatus.value == 'even')) || ((evenOdd(sumNumber) == false) && (userStatus.value == 'odd'))){
         document.getElementById('result').innerHTML = 'Hai vinto !';
 
     }else{
@@ -29,11 +31,9 @@ validationForm.addEventListener("submit", (e) => {
 //----- FUNCTIONS ---------------------------------
 
 
-function randomNumber (max, min){
-
-    return Math.floor(Math.random() * ((max - min) + 1)) + min;
-
-};
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
 
 function summ (n1, n2){
 
